@@ -299,6 +299,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/10/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/10/hello-world/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -371,6 +381,9 @@
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -532,12 +545,12 @@
 
   <div class="powered-by">
   <i class="fa fa-user-md"></i>
-  <span id="busuanzi_container_site_uv">
-    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
-  </span>
-  <span id="busuanzi_container_site_pv">
-      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
-  </span>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
   </div>
   </div>
   <script>
@@ -556,6 +569,7 @@
       } 
   setInterval("createtime()",250);
   </script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         
 
 
@@ -694,6 +708,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'YHBqMKI04zbGTa3u2nOobtiB-gzGzoHsz',
+        appKey: 'pxvHiGHQzmPME3SLR5Vez2mS',
+        placeholder: '请在此输入您得留言',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
