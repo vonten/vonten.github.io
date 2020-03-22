@@ -79,17 +79,27 @@
 
 
 
-<meta name="description" content="雨后有车驶来">
-<meta property="og:type" content="website">
-<meta property="og:title" content="IT小酒馆">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="说到告警，相信每个运维人员都不会陌生。以往我们用来发送告警的方式往往是短信或者邮件，但是这两种方式要么不够灵活要么实时性不够。随着微信的普及，现在越来越多的互联网应用选择用微信作为平台发送告警信息，今天就跟大家分享一个利用Python实现微信告警的方法。 目前集成微信告警主要有两种方式：  个人微信号发送告警 订阅号&#x2F;服务号&#x2F;企业微信发送告警  个人微信号发送告警使用个人号发送信息，其实就是通过调">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python实现微信告警">
+<meta property="og:url" content="http://yoursite.com/2020/03/20/Python%E5%AE%9E%E7%8E%B0%E5%BE%AE%E4%BF%A1%E5%91%8A%E8%AD%A6/index.html">
 <meta property="og:site_name" content="IT小酒馆">
-<meta property="og:description" content="雨后有车驶来">
+<meta property="og:description" content="说到告警，相信每个运维人员都不会陌生。以往我们用来发送告警的方式往往是短信或者邮件，但是这两种方式要么不够灵活要么实时性不够。随着微信的普及，现在越来越多的互联网应用选择用微信作为平台发送告警信息，今天就跟大家分享一个利用Python实现微信告警的方法。 目前集成微信告警主要有两种方式：  个人微信号发送告警 订阅号&#x2F;服务号&#x2F;企业微信发送告警  个人微信号发送告警使用个人号发送信息，其实就是通过调">
+<meta property="og:image" content="http://yoursite.com/images/webwechat.png">
+<meta property="og:image" content="http://yoursite.com/images/wechat1.png">
+<meta property="og:image" content="http://yoursite.com/images/wechat2.png">
+<meta property="og:image" content="http://yoursite.com/images/wechat3.png">
+<meta property="og:image" content="http://yoursite.com/images/wechat4.png">
+<meta property="og:image" content="http://yoursite.com/images/wechat5.png">
+<meta property="og:image" content="http://yoursite.com/images/wechat6.png">
+<meta property="article:published_time" content="2020-03-20T13:31:00.000Z">
+<meta property="article:modified_time" content="2020-03-22T16:01:31.055Z">
 <meta property="article:author" content="Walton">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="DevNet">
 <meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/webwechat.png">
 
 
 
@@ -119,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/20/Python实现微信告警/"/>
 
 
 
 
 
-  <title>IT小酒馆</title>
+  <title>Python实现微信告警 | IT小酒馆</title>
   
 
 
@@ -144,8 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -238,9 +247,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -270,9 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/20/Python%E5%AE%9E%E7%8E%B0%E5%BE%AE%E4%BF%A1%E5%91%8A%E8%AD%A6/" itemprop="url">Python实现微信告警</a></h1>
+          <h1 class="post-title" itemprop="name headline">Python实现微信告警</h1>
         
 
         <div class="post-meta">
@@ -332,9 +339,7 @@
       
 
       
-        
-          
-            <p>说到告警，相信每个运维人员都不会陌生。以往我们用来发送告警的方式往往是短信或者邮件，但是这两种方式要么不够灵活要么实时性不够。随着微信的普及，现在越来越多的互联网应用选择用微信作为平台发送告警信息，今天就跟大家分享一个利用Python实现微信告警的方法。</p>
+        <p>说到告警，相信每个运维人员都不会陌生。以往我们用来发送告警的方式往往是短信或者邮件，但是这两种方式要么不够灵活要么实时性不够。随着微信的普及，现在越来越多的互联网应用选择用微信作为平台发送告警信息，今天就跟大家分享一个利用Python实现微信告警的方法。</p>
 <p>目前集成微信告警主要有两种方式：</p>
 <ul>
 <li>个人微信号发送告警</li>
@@ -356,8 +361,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env python3</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Time    : 2020&#x2F;03&#x2F;18 20:55</span><br><span class="line"># @Author  : Walton</span><br><span class="line"># @FileName: WeChatAlert.py</span><br><span class="line"># @Software: PyCharm</span><br><span class="line"># @Blog    ：https:&#x2F;&#x2F;vonten.github.io</span><br><span class="line"></span><br><span class="line">import time</span><br><span class="line">import json</span><br><span class="line">import requests</span><br><span class="line">Day &#x3D; time.strftime(&#39;%Y&#123;y&#125;%m&#123;m&#125;%d&#123;d&#125;&#39;).format(y&#x3D;&#39;年&#39;,m&#x3D;&#39;月&#39;,d&#x3D;&#39;日&#39;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def get_token():</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    获取access_token</span><br><span class="line">    :return: access_token or None</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    url &#x3D; &#39;https:&#x2F;&#x2F;qyapi.weixin.qq.com&#x2F;cgi-bin&#x2F;gettoken&#39;</span><br><span class="line">    values &#x3D; &#123;&#39;corpid&#39;: &#39;Your corpid&#39;,  #输入企业ID</span><br><span class="line">              &#39;corpsecret&#39;: &#39;Your secret&#39;,  #输入应用secret值</span><br><span class="line">              &#125;</span><br><span class="line">    req &#x3D; requests.post(url, params&#x3D;values)</span><br><span class="line">    if req.status_code &#x3D;&#x3D; 200:</span><br><span class="line">        return json.loads(req.content)[&#39;access_token&#39;]</span><br><span class="line">    else:</span><br><span class="line">        print(&quot;access_token获取失败&quot;)</span><br><span class="line">        return None</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def send_msg(agentid, content):</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    调用微信API实现信息推送</span><br><span class="line">    :param agentid: 企业微信agentId</span><br><span class="line">    :param content: 推送内容</span><br><span class="line">    :return:</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    url &#x3D; &quot;https:&#x2F;&#x2F;qyapi.weixin.qq.com&#x2F;cgi-bin&#x2F;message&#x2F;send?access_token&#x3D;&quot; + get_token()</span><br><span class="line">    header &#x3D; &#123;</span><br><span class="line">        &quot;Content-Type&quot;: &quot;application&#x2F;json&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    form_data &#x3D; &#123;</span><br><span class="line">        &quot;touser&quot;: &quot;@all&quot;,</span><br><span class="line">        &quot;toparty&quot;: &quot; PartyID1 | PartyID2 &quot;,</span><br><span class="line">        &quot;totag&quot;: &quot; TagID1 | TagID2 &quot;,</span><br><span class="line">        &quot;msgtype&quot;: &quot;textcard&quot;,</span><br><span class="line">        &quot;agentid&quot;: agentid,</span><br><span class="line">        &quot;textcard&quot;: &#123;</span><br><span class="line">            &quot;title&quot;: &quot;自动告警&quot;,</span><br><span class="line">            &quot;description&quot;: content,</span><br><span class="line">            &quot;url&quot;: &quot;https:&#x2F;&#x2F;vonten.github.io&quot;,</span><br><span class="line">            &quot;btntxt&quot;: &quot;更多&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;safe&quot;: 0</span><br><span class="line">    &#125;</span><br><span class="line">    req &#x3D; requests.post(url, data&#x3D;json.dumps(form_data).encode(&#39;utf-8&#39;), headers&#x3D;header)</span><br><span class="line">    if req.status_code &#x3D;&#x3D; 200:</span><br><span class="line">        return json.loads(req.content)</span><br><span class="line">    else:</span><br><span class="line">        print(&quot;告警推送失败&quot;)</span><br><span class="line">        return None</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    send_msg(&#39;1000002&#39;,&#39;&lt;div class&#x3D;\&quot;gray\&quot;&gt;&#123;date&#125;&lt;&#x2F;div&gt; &lt;div class&#x3D;\&quot;normal\&quot;&gt;以下设备出现异常，请及时检查！&lt;&#x2F;div&gt;&lt;div class&#x3D;\&quot;highlight\&quot;&gt;XXX核心交换机&lt;&#x2F;div&gt;&#39;.format(date&#x3D;Day))</span><br></pre></td></tr></table></figure>
 <h5 id="结果测试"><a href="#结果测试" class="headerlink" title="结果测试"></a>结果测试</h5><p><img src="/images/wechat6.png" alt="告警信息"></p>
 
-          
-        
       
     </div>
     
@@ -374,144 +377,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/10/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Walton">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="IT小酒馆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/10/hello-world/" itemprop="url">要来一杯吗</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T17:39:08+08:00">
-                2020-03-10
-              </time>
+              <a href="/2020/03/10/hello-world/" rel="next" title="要来一杯吗">
+                <i class="fa fa-chevron-left"></i> 要来一杯吗
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/10/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/10/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Hi，欢迎来到IT小酒馆，我是Walton，一名小网工，贪吃嗜睡，喜欢偶尔和朋友喝两杯；<br>这个酒馆不卖酒，只为交些IT朋友;<br>将不定时分享些我觉得有趣的实例，主要关于Python、DevNet，后续可能会有更多方向；<br>有喜欢或觉得有用的帖子，就点个赞吧~<br><img src="/images/bar3.jpeg" alt="IT Bistro"></p>
-<h2 id="Welcome"><a href="#Welcome" class="headerlink" title="Welcome"></a>Welcome</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def IT_Bistro(): </span><br><span class="line">    print(&#39;Welcome to IT Bistro&#39;)</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -521,10 +408,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -532,6 +420,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -552,8 +447,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -627,6 +531,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#个人微信号发送告警"><span class="nav-number">1.</span> <span class="nav-text">个人微信号发送告警</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#企业微信发送告警"><span class="nav-number">2.</span> <span class="nav-text">企业微信发送告警</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注册企业微信"><span class="nav-number">2.1.</span> <span class="nav-text">注册企业微信</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建应用"><span class="nav-number">2.2.</span> <span class="nav-text">创建应用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调用微信API"><span class="nav-number">2.3.</span> <span class="nav-text">调用微信API</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现"><span class="nav-number">2.4.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#结果测试"><span class="nav-number">2.5.</span> <span class="nav-text">结果测试</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -786,6 +706,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
